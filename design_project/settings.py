@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    "corsheaders",
     'design_app',
 ]
 
-AUTH_USER_MODEL = 'design_app.User'
+# AUTH_USER_MODEL = 'design_app.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,7 +52,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'design_project.urls'
 
